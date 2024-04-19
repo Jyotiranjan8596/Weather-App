@@ -1,8 +1,8 @@
 import React from "react";
 
-function Temperature() {
+function Temperature({ setCity, stats }) {
   const handelCityChange = (e) => {
-    console.log(e.target.value);
+    setCity(e.target.value);
   };
   return (
     <>
@@ -12,6 +12,7 @@ function Temperature() {
           placeholder="Serach"
           className="bg-slate-600 border border-slate-500 text-slate-200 focus:outline-none focus:border-slate-400 placeholder-slate-400 text-md w-60 p-2"
           onChange={handelCityChange}
+          defaultValue={"Bhubaneswar"}
         />
         <div className="m-4">
           <svg
@@ -20,7 +21,7 @@ function Temperature() {
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="white "
-            className="w-6 h-6"
+            className="w-6 h-6 text-transform scale-100 hover:scale-110 transition-transform duration-500 ease-in-out"
           >
             <path
               strokeLinecap="round"
@@ -43,7 +44,7 @@ function Temperature() {
           viewBox="0 0 24 24"
           strokeWidth={1.5}
           stroke="yellow"
-          className="w-14 h-14  text-slate-200"
+          className="w-14 h-14  text-slate-200 text-transform scale-100 hover:scale-110 transition-transform duration-300 ease-in-out"
         >
           <path
             strokeLinecap="round"
@@ -52,20 +53,33 @@ function Temperature() {
           />
         </svg> */}
 
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="white" className="w-12 h-12 text-slate-200">
-  <path strokeLinecap="round" strokeLinejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
-</svg>
-
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth={1.5}
+          stroke="white"
+          className="w-12 h-12 text-slate-200 text-transform scale-100 hover:scale-110 transition-transform duration-500 ease-in-out"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z"
+          />
+        </svg>
       </div>
 
       <div className="flex justify-center items-center m-8 text-slate-200">
-        <p className="font-semibold text-[55px] ">28</p>
+        <p className="font-semibold text-[55px] ">23</p>
         <span className="text-[33px]">°C</span>
       </div>
 
+      <div className="flex justify-center items-center m-8 text-slate-300">
+        Mist
+      </div>
 
-      <div className="flex justify-center items-center m-11 text-slate-200">
-
+      <div className="flex justify-center items-center m-5 text-[15px] text-slate-400">
+        Today.2023-11-19 0:19 | Odisha
       </div>
     </>
   );
